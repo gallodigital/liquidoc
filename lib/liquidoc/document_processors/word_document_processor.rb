@@ -13,7 +13,7 @@ module Liquidoc
           document_entries.each do |document_entry|
             out.put_next_entry document_entry.name
 
-            if document_entry.name.include?(".xml")
+            if document_entry.name.include?("header") or document_entry.name.include?("footer") or document_entry.name == 'word/document.xml'
               self.current_file = document_entry.name
               out.write template.render(context)
             else
