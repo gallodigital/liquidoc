@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'liquid', '= 2.6'
+  spec.add_dependency 'liquid', '>= 4.0.0'
   spec.add_dependency 'nokogiri', '~> 1.8.2'
   spec.add_dependency 'rubyzip', '>= 0.9.5'
   spec.add_dependency 'mimemagic', '~> 0.3.2'
