@@ -15,7 +15,11 @@ module Liquidoc
 
             if document_entry.name.include?("header") or document_entry.name.include?("footer") or document_entry.name == 'word/document.xml'
               self.current_file = document_entry.name
-              out.write template.render(context)
+              begin
+                out.write template.render(context)
+              rescue
+                out.write document_entries.read(document_entry.name)
+              end
             else
               out.write document_entries.read(document_entry.name)
             end
